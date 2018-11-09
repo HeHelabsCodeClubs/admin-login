@@ -194,6 +194,7 @@ input[type="checkbox"] {
 }
 .umuti-landing-right .form-container .comp-logo {
     height: 13rem !important;
+    width: auto !important;
 }
 .umuti-landing-right .form-container .company-logo {
     display: flex;
@@ -237,11 +238,12 @@ form .umuti-submit-button button {
     border-radius: 3rem;
     padding: 0.3rem 6rem;
     outline: none !important;
+    border: none !important;
 }
 
 form .umuti-submit-button button:hover {
     background: #fff;
-    color: #46CADF;
+    color: #46CADF !important;
 }
 .umuti-login-message {
     margin: 0 0 3rem 0;
