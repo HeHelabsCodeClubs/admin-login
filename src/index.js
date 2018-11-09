@@ -26,40 +26,50 @@ class AdminLogin extends Component {
         )
     }
     render() {
-        const { handleSubmit } = this.props
+        const { 
+            handleSubmit,
+            loginLeftClass,
+            loginRightClass,
+            companyLogo,
+            inputClass,
+            submitButtonClass,
+            loginMessage
+        } = this.props
         const { validationErrors, buttonText } = this.state;
         const buttonDisableState = buttonText === 'Login' ? false : true;
         return (
             <div className="landing-container">
                 <div className="row landing-wrapper">
                     <div className="col-lg-7 col-md-7 col-sm-7 col-xs-12 col-reset">
-                        <div className="landing-left">
+                        <div className={loginLeftClass}>
                         </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-reset">
-                        <div className="landing-right">
+                        <div className={loginRightClass}>
                         <div className="form-container login-container">
                             <div className="company-logo">
-                                <img src='https://res.cloudinary.com/hehe/image/upload/v1535021246/Iposita/EMS_logo2.png' className='comp-logo' />
+                                <img src={companyLogo} className='comp-logo' />
                                 </div>
-                                <div className="login-message">Welcome back! Please login to your account</div>
+                                <div className={loginMessage}>Welcome back! Please login to your account</div>
                                 {this.renderErrors(validationErrors)}
                                 <form onSubmit={handleSubmit(this.submit)}>
-                                    <div className="input-area">
+                                    <div className={inputClass}>
                                         <Field 
                                         name="email"
                                         label="Email"
                                         type="input"
                                         kind="text"
+                                        placeholder="Email"
                                         component={this.renderField} 
                                         />
                                     </div>
-                                    <div className="input-area">
+                                    <div className={inputClass}>
                                         <Field 
                                         name="password"
                                         label="Password"
                                         type="input"
                                         kind="password"
+                                        placeholder="password"
                                         component={this.renderField} 
                                         />
                                     </div>
@@ -73,7 +83,7 @@ class AdminLogin extends Component {
                                         <span className="remember-me">Remember me</span>
                                         <span className="forgot-password"><Link to="/forgot">Forgot Password</Link></span>
                                     </div>
-                                    <div className="submit-button">
+                                    <div className={submitButtonClass}>
                                         <button 
                                         type="submit"
                                         className="save login-btn"

@@ -1,170 +1,244 @@
-.common-header {
-    z-index: 9999999;
-    background: #ffffff;
-    position: fixed;
-    width: 100%;
+body {
+    color: #2f2f2f !important;
 }
-.top-panel {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.top-panel .comp-logo {
-    height: 4rem;
-    justify-content: left;
-    align-items: center;
-    display: flex;
-}
-.top-panel .comp-logo img {
-    height: 2.5rem;
-    margin: 0 0 0 2rem;
-}
-.top-panel .user-account {
-    display: flex;
-    align-items: center;
-    height: 4rem;
-    justify-content: flex-end;
-    padding: 0 2rem 0 0;
-}
-.top-panel .user-account .user-pic {
-    height: 3rem;
-    width: 3rem;
-}
-.top-panel .user-account .user-pic img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #696565;
-}
-.top-panel .user-account .user-name {
-    padding: 0 0 0 1rem;
-}
-.main-menu {
-    padding: 0 !important;
-    margin: 0 !important;
-    background: #0C7995 !important;
-}
-.main-menu .nav-container {
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-}
-.main-menu .nav-container ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.main-menu .nav-container ul .nav__menu-item {
-    display: inline-block;
-    position: relative;
-}
-.main-menu .nav-container ul .nav__menu-item:hover {
-    background-color: #46CADF !important;
-}
-.main-menu .nav-container ul .nav__menu-item:hover .nav__submenu {
-    display: block;
-    height: auto;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a {
-    cursor: pointer;
-    color: #ffffff;
-    font-family: "Gotham XLight";
-    display: flex;
-    height: 3rem;
-    align-items: center;
-    padding: 0 2.5rem;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a.active {
-    background: #46CADF !important;
-    font-family: "Gotham Book";
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a.active .icon-icon_up-arrow-small:before {
-    color: #ffffff;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a.active .icon-icon_down-arrow-small:before {
-    color: #ffffff;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a:hover {
-    background: #46CADF !important;
-    font-family: "Gotham Book";
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a:hover .icon-icon_up-arrow-small:before {
-    color: #ffffff;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a:hover .icon-icon_down-arrow-small:before {
-    color: #ffffff;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a .icon-icon_up-arrow-small:before {
-    color: #46CADF !important;
-    font-size: 0.5rem !important;
-    margin: 0 0 0 1rem;
-}
-.main-menu .nav-container ul .nav__menu-item .main-menu__item-a .icon-icon_down-arrow-small:before {
-    color: #46CADF !important;
-    font-size: 0.5rem !important;
-    margin: 0 0 0 1rem;
-}
-.main-menu .nav__submenu {
-    position: absolute;
-    background-color: #46CADF !important;
-    width: 100%;
-    height: 1rem;
-    z-index: 99999999999 !important;
-    box-shadow: -1px 8px 20px #cccccc;
-    translate: 0.3s;
-}
-.nav__submenu-item .sub-menu__item-a {
-    cursor: pointer;
-    color: #ffffff;
-    display: flex;
-    height: 2rem;
-    align-items: center;
-    justify-content: center;
-    border-top: 0.001rem solid #EBEBEB;
-}
-.nav__submenu-item .sub-menu__item-a.active {
-    background: #0C7995 !important;
-}
-.nav__submenu-item .sub-menu__item-a:hover {
-    background: #0C7995 !important;
-}
-.nav__submenu-item:hover {
-    background: #0C7995 !important;
-}
-.main-menu .hamburger-closer {
-    display: none;
-}
-.main-menu button.navbar-toggler {
-    display: none;
-}
-      
-.navbar-toggler-icon{
-    font-size: 1rem;
-}
-.barBtn{
-    text-align: center;
-    margin: 0.2rem auto;
-    background: transparent;
-    color: #ffffff;
-}
-.barBtn:hover{
-    text-align: center;
-    margin: 0.2rem auto;
-    background: #46CADF !important;
-    border-radius: 0 !important;
+.landing-container {
+    height: 100vh;
 }
 
-@media(max-width: 688px) {
-    .main-menu button.navbar-toggler {
-        display: block;
-    }
-    .main-menu .hamburger-closer {
-        display: none;
-    }
-    .main-menu .nav-container {
-        height: 3rem;
-        display: flex;
-        justify-content: center;
-    }
+.landing-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.landing-left {
+    background: linear-gradient(rgba(21, 18, 18, 0.69), rgba(0, 0, 0, 0.67)), url('https://res.cloudinary.com/hehe/image/upload/v1535021246/Iposita/road.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.login-pic img {
+    width: 100%;
+    height: 100vh;
+}
+
+.landing-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+form .input-area {
+    margin: 2rem 0;
+}
+form .input-area span {
+    color: #da3a3a;
+}
+
+.form-container.login-container {
+    width: 60%;
+}
+.form-container .comp-logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.form-container .comp-logo img {
+    height: 2rem;
+    width: auto;
+}
+.login-message {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+}
+form .submit-button {
+    margin: 1rem 0;
+}
+.login-actions {
+    margin: 0 2rem 2rem 2rem !important;
+    height: auto; 
+}
+.login-actions label {
+    display: none;
+}
+.login-actions div {
+    display: inline-block;
+    height: auto !important;
+    margin: 0 !important;
+}
+.login-actions .remember-me {
+    display: inline-block;
+}
+.login-actions .forgot-password {
+    display: inline-block;
+    float: right;
+}
+input[type="checkbox"] {
+    width: auto !important;
+    height: auto !important;
+}
+
+.auth-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.signUpWrapper{
+    padding: 0 2rem;
+    margin: 3rem 0;
+}
+.signUpHeader{
+    border-bottom: 1px solid #ccc;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+}
+.signUpHeader .authTitle {
+    color: #f7af4f;
+    font-size: 1rem;
+    font-family: "Gotham Medium";
+}
+.signUpBody{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+.signUpBody .companyInfo{
+    color: #5979a3;
+}
+.signUpBody .subCompanyInfo{
+    color: #5979a3;
+}
+.signUpBody .planSelection{
+    padding: 1rem 0;
+}
+.signUpBody .planSelection .boldTitle{
+    padding: 1rem 0;
+    color: #5979a3;
+}
+.signUpBody .planSelection .boldTitle span a {
+    color: #f7af4f;
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+.signUpBody .planSelection .planDets{
+    padding: 0.5rem 0;
+}
+.signUpBody .planSelection .form-check-label{
+    color: #2a4466;
+}
+.signUpBody .authBtn.reset {
+    background: #EBEBEB;
+    color: #2a4466;
+    font-family: "Gotham Medium";
+}
+.signUpBody .form-component .col-reset-right{
+    margin: 0 !important;
+    padding: 0 0.5rem 0 0 !important;
+}
+.signUpBody .form-component .col-reset-left{
+    margin: 0 !important;
+    padding: 0 0 0 0.5rem !important;
+}
+.reset-message {
+    font-size: 0.7rem;
+    color: #5979a3;
+    padding: 0 0 1rem 0;
+}
+.create-form {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.validation-error {
+    color: #da3a3a;
+    text-align: center;
+}
+.login-message-small {
+    font-size: 0.6rem;
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+    color: #5979a3;
+}
+.login-message-reset {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0 0 0;
+    color: #5979a3;
+}
+.reset-btn {
+    width: 12rem !important;
+    height: 2.3rem;
+    font-family: "Gotham Bold";
+}
+.login-btn {
+    width: 12rem !important;
+    height: 2.3rem;
+}
+
+.umuti-landing-left {
+    background: url('https://res.cloudinary.com/hehe/image/upload/v1541583329/Umuti/landing-bottom.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+
+.umuti-landing-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #fdf1e7;
+    border-left: 0.5rem solid #46CADF; 
+}
+.umuti-landing-right .comp-logo img {
+    height: 13rem !important;
+}
+
+form .umuti-input-area {
+    margin: 2rem 0;
+}
+
+form .umuti-input-area span {
+    color: #da3a3a;
+}
+form .umuti-submit-button {
+    margin: 1rem 0;
+}
+
+form .umuti-input-area {
+    position: relative;
+    height: 3rem;
+    margin: 1rem 0;    
+}
+form .umuti-input-area label {
+    display: none;
+}
+form .umuti-input-area input {
+    width: 100%;
+    bottom: 0;
+    height: 2.5rem;
+    border-radius: 3rem;
+    padding: 0.2rem 1rem;
+    border: 1px solid #707070;
+    outline: none !important;
+}
+form .umuti-submit-button {
+    text-align: center;
+}
+form .umuti-submit-button button {
+    background: #46CADF;
+    color: #fff;
+    border-radius: 3rem;
+    padding: 0.3rem 6rem;
+    outline: none !important;
+}
+
+form .umuti-submit-button button:hover {
+    background: #fff;
+    color: #46CADF;
+}
+.umuti-login-message {
+    margin: 0 0 3rem 0;
 }
