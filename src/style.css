@@ -226,7 +226,7 @@ form .umuti-input-area input {
     height: 2.5rem;
     border-radius: 3rem;
     padding: 0.2rem 1rem;
-    border: 1px solid #707070;
+    border: none;
     outline: none !important;
 }
 form .umuti-submit-button {
