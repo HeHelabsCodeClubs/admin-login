@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import RenderErrors from 'errors-render-component';
 import RenderField from 'render-field';
+import './style.css';
 
 class AdminLogin extends Component {
     constructor(props) {
