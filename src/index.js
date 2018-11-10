@@ -20,7 +20,7 @@ class AdminLogin extends Component {
             submitButtonText 
         } = nextProps;
         if (!isEmpty(errors)) {
-            if (validationErrors !== errors) {
+            if (this.state.validationErrors !== errors) {
                 this.setState({
                     validationErrors: errors
                 });

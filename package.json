@@ -1,6 +1,6 @@
 {
   "name": "admin-login",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "\"a component which render admin login page\"",
   "main": "dist/index.js",
   "scripts": {
