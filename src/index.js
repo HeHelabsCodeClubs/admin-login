@@ -7,13 +7,18 @@ class AdminLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            buttonText: 'Login',
-            validationErrors: {}
+            formSubmitting: false,
+            validationErrors: {},
+            buttonText: ''
         };
         this.renderErrors = this.renderErrors.bind(this);
     }
     componentWillReceiveProps(nextProps) {
-        const { errors } = nextProps;
+        const { 
+            errors, 
+            formSubmitting, 
+            submitButtonText 
+        } = nextProps;
         if (!isEmpty(errors)) {
             if (validationErrors !== errors) {
                 this.setState({
@@ -21,15 +26,23 @@ class AdminLogin extends Component {
                 });
             }
         }
+        if (formSubmitting !== false) {
+            if(formSubmitting !== this.state.formSubmitting) {
+                this.setState({
+                    formSubmitting: formSubmitting
+                });
+            }
+        }
+        if (submitButtonText !== this.state.buttonText) {
+            this.setState({
+                buttonText: submitButtonText
+            });
+        }
     }
     renderErrors(errors) {
         return <RenderErrors errorData={errors} />
     }
-    // renderField(field){
-    //     return (
-    //         <RenderField fieldInput={field}/>
-    //     );  
-    // }
+
     render() {
         const { 
             handleSubmit,
@@ -43,10 +56,10 @@ class AdminLogin extends Component {
             forgotPasswordPageRedirection,
             emailField,
             passwordField,
-            rememberMeField
+            rememberMeField,
         } = this.props
-        const { validationErrors, buttonText } = this.state;
-        const buttonDisableState = buttonText === 'Login' ? false : true;
+        const { validationErrors, formSubmitting, buttonText } = this.state;
+        const buttonDisableState = formSubmitting ? true : false;
         return (
             <div className="landing-container">
                 <div className="row landing-wrapper">
@@ -64,34 +77,12 @@ class AdminLogin extends Component {
                                 {this.renderErrors(validationErrors)}
                                 <form onSubmit={handleSubmit(submit)}>
                                     <div className={inputClass}>
-                                        {/* <Field 
-                                        name="email"
-                                        label="Email"
-                                        type="input"
-                                        kind="text"
-                                        placeholder="Email"
-                                        component={this.renderField} 
-                                        /> */}
                                         {emailField}
                                     </div>
                                     <div className={inputClass}>
-                                        {/* <Field 
-                                        name="password"
-                                        label="Password"
-                                        type="input"
-                                        kind="password"
-                                        placeholder="password"
-                                        component={this.renderField} 
-                                        /> */}
                                         {passwordField}
                                     </div>
                                     <div className="login-actions">
-                                        {/* <Field 
-                                        name="rememberme"
-                                        type="input"
-                                        kind="checkbox"
-                                        component={this.renderField} 
-                                        /> */}
                                         {rememberMeField}
                                         <span className="remember-me">Remember me</span>
                                         <span className="forgot-password">
@@ -121,21 +112,4 @@ class AdminLogin extends Component {
     }
 }
 
-// function validate(values) {
-//     const errors = {};
-
-//     if (!values.email) {
-//         errors.email = 'Email is required!';
-//     }
-
-//     if (!values.password) {
-//         errors.password = "Password is required";
-//     }
-//     return errors;
-// }
-
-// export default reduxForm({
-//     validate,
-//     form: 'loginform'
-// })(AdminLogin);
 export default AdminLogin;
