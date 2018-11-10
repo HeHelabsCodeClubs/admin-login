@@ -1,6 +1,6 @@
 {
   "name": "admin-login",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "\"a component which render admin login page\"",
   "main": "dist/index.js",
   "scripts": {
@@ -36,12 +36,6 @@
   },
   "dependencies": {
     "errors-render-component": "^1.0.1",
-    "lodash.isempty": "^4.4.0",
-    "react-notify-toast": "^0.5.0",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.0.4",
-    "redux-form": "^7.3.0",
-    "render-field": "^1.0.0"
+    "lodash.isempty": "^4.4.0"
   }
 }

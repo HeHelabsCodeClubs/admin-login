@@ -1,9 +1,6 @@
-import _ from 'lodash';
+import isEmpty from 'lodash.isempty';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form';
 import RenderErrors from 'errors-render-component';
-import RenderField from 'render-field';
 import './style.css';
 
 class AdminLogin extends Component {
@@ -15,17 +12,24 @@ class AdminLogin extends Component {
         };
         this.renderErrors = this.renderErrors.bind(this);
     }
-    submit(values) {
-
+    componentWillReceiveProps(nextProps) {
+        const { errors } = nextProps;
+        if (!isEmpty(errors)) {
+            if (validationErrors !== errors) {
+                this.setState({
+                    validationErrors: errors
+                });
+            }
+        }
     }
     renderErrors(errors) {
         return <RenderErrors errorData={errors} />
     }
-    renderField(field){
-        return (
-            <RenderField fieldInput={field}/>
-        )
-    }
+    // renderField(field){
+    //     return (
+    //         <RenderField fieldInput={field}/>
+    //     );  
+    // }
     render() {
         const { 
             handleSubmit,
@@ -34,7 +38,12 @@ class AdminLogin extends Component {
             companyLogo,
             inputClass,
             submitButtonClass,
-            loginMessage
+            loginMessage,
+            submit,
+            forgotPasswordPageRedirection,
+            emailField,
+            passwordField,
+            rememberMeField
         } = this.props
         const { validationErrors, buttonText } = this.state;
         const buttonDisableState = buttonText === 'Login' ? false : true;
@@ -53,36 +62,45 @@ class AdminLogin extends Component {
                                 </div>
                                 <div className={loginMessage}>Welcome back! Please login to your account</div>
                                 {this.renderErrors(validationErrors)}
-                                <form onSubmit={handleSubmit(this.submit)}>
+                                <form onSubmit={handleSubmit(submit)}>
                                     <div className={inputClass}>
-                                        <Field 
+                                        {/* <Field 
                                         name="email"
                                         label="Email"
                                         type="input"
                                         kind="text"
                                         placeholder="Email"
                                         component={this.renderField} 
-                                        />
+                                        /> */}
+                                        {emailField}
                                     </div>
                                     <div className={inputClass}>
-                                        <Field 
+                                        {/* <Field 
                                         name="password"
                                         label="Password"
                                         type="input"
                                         kind="password"
                                         placeholder="password"
                                         component={this.renderField} 
-                                        />
+                                        /> */}
+                                        {passwordField}
                                     </div>
                                     <div className="login-actions">
-                                        <Field 
+                                        {/* <Field 
                                         name="rememberme"
                                         type="input"
                                         kind="checkbox"
                                         component={this.renderField} 
-                                        />
+                                        /> */}
+                                        {rememberMeField}
                                         <span className="remember-me">Remember me</span>
-                                        <span className="forgot-password"><Link to="/forgot">Forgot Password</Link></span>
+                                        <span className="forgot-password">
+                                            <a
+                                            onClick={() => forgotPasswordPageRedirection()}
+                                            >
+                                                Forgot Password
+                                            </a>
+                                        </span>
                                     </div>
                                     <div className={submitButtonClass}>
                                         <button 
@@ -103,20 +121,21 @@ class AdminLogin extends Component {
     }
 }
 
-function validate(values) {
-    const errors = {};
+// function validate(values) {
+//     const errors = {};
 
-    if (!values.email) {
-        errors.email = 'Email is required!';
-    }
+//     if (!values.email) {
+//         errors.email = 'Email is required!';
+//     }
 
-    if (!values.password) {
-        errors.password = "Password is required";
-    }
-    return errors;
-}
+//     if (!values.password) {
+//         errors.password = "Password is required";
+//     }
+//     return errors;
+// }
 
-export default AdminLogin = reduxForm({
-    validate,
-    form: 'loginform'
-})(AdminLogin);
+// export default reduxForm({
+//     validate,
+//     form: 'loginform'
+// })(AdminLogin);
+export default AdminLogin;
