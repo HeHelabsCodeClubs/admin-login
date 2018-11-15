@@ -6,7 +6,6 @@ function getValues(values) {
     console.log(values);
 }
 
-
 const App = () => (
     <AdminLogin
     loginLeftClass="landing-left"
